@@ -1,16 +1,20 @@
-# drawLayout
-仿qq，网易新闻的自定义抽屉开关。
+# 使用ViewDragHelper打造属于自己的DragLayout（抽屉开关 ）
 
 
+
+---
 **DrawLayout这个自定义的空间很常见，qq，网易新闻，知乎等等，都有这种效果，那这种效果是怎样实现的呢？本篇博客将带你来怎样实现它。**
 
-### 废话 不多说，先来看一下 效果
+
+**转载请注明[原博客地址：](http://blog.csdn.net/gdutxiaoxu/article/details/51935896)  http://blog.csdn.net/gdutxiaoxu/article/details/51935896** 
+
+### 废话不多说，先来看一下 效果
 ![](http://ww3.sinaimg.cn/large/9fe4afa0gw1f5w113v6btg208w0futsy.gif)
 
-## 首先 我们先来看一下我们要怎样使用它
+## 首先我们先来看一下我们要怎样使用它
 **其实只需要两个 步骤，使用起来 非常方便**
 ### 1.在XML文件
-DragLayout至少要有两个 ViewGroup的孩子
+DragLayout至少要有两个孩子，且都是 ViewGroup或者ViewGroup的实现类
 ```xml
 <com.xujun.drawerLayout.drag.DragLayout
     android:id="@+id/dl"
@@ -79,8 +83,8 @@ DragLayout至少要有两个 ViewGroup的孩子
 
 </com.xujun.drawerLayout.drag.DragLayout>
 ```
-### 在 代码中若想为其设置监听器,
-分别可以监听打开的 时候，关闭的时候，拖动的时候，可以在里面做相应的处理，同时我还加入了 自定义属性可以通过    app:range="480"或者setRange（）方法 设置打开 抽屉的 范围。
+### 在代码中若想为其设置监听器,
+分别可以监听打开的 时候，关闭的时候，拖动的时候，可以在里面做相应的处理，同时我还加入了 自定义属性可以通过    app:range="480"或者setRange（）方法，即可设置打开抽屉的范围。
 ```java
  mDragLayout.setDragStatusListener(new OnDragStatusChangeListener() {
 
@@ -114,3 +118,8 @@ DragLayout至少要有两个 ViewGroup的孩子
             }
         });
 ```
+
+---
+
+## 实现方式
+可以参考我的这篇博客[**使用ViewDragHelper打造属于自己的DragLayout（抽屉开关 ）**](http://blog.csdn.net/gdutxiaoxu/article/details/51935896) 
